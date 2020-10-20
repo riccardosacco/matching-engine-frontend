@@ -1,0 +1,1 @@
+export const GENERATE_QUERY = "GENERATE_QUERY";
