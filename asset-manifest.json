@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/matching-engine-frontend/static/css/main.5f361e03.chunk.css",
-    "main.js": "/matching-engine-frontend/static/js/main.ef23bf76.chunk.js",
-    "main.js.map": "/matching-engine-frontend/static/js/main.ef23bf76.chunk.js.map",
+    "main.css": "/matching-engine-frontend/static/css/main.62b8705c.chunk.css",
+    "main.js": "/matching-engine-frontend/static/js/main.0db02bfc.chunk.js",
+    "main.js.map": "/matching-engine-frontend/static/js/main.0db02bfc.chunk.js.map",
     "runtime-main.js": "/matching-engine-frontend/static/js/runtime-main.a9fddad8.js",
     "runtime-main.js.map": "/matching-engine-frontend/static/js/runtime-main.a9fddad8.js.map",
-    "static/js/2.af6dc0f9.chunk.js": "/matching-engine-frontend/static/js/2.af6dc0f9.chunk.js",
-    "static/js/2.af6dc0f9.chunk.js.map": "/matching-engine-frontend/static/js/2.af6dc0f9.chunk.js.map",
+    "static/js/2.04b0cc78.chunk.js": "/matching-engine-frontend/static/js/2.04b0cc78.chunk.js",
+    "static/js/2.04b0cc78.chunk.js.map": "/matching-engine-frontend/static/js/2.04b0cc78.chunk.js.map",
     "index.html": "/matching-engine-frontend/index.html",
-    "precache-manifest.c1c5f1220b622082d09f644cef7397de.js": "/matching-engine-frontend/precache-manifest.c1c5f1220b622082d09f644cef7397de.js",
+    "precache-manifest.88a5420dada4b2970fc1ec7deba8f675.js": "/matching-engine-frontend/precache-manifest.88a5420dada4b2970fc1ec7deba8f675.js",
     "service-worker.js": "/matching-engine-frontend/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/matching-engine-frontend/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.af6dc0f9.chunk.js.LICENSE.txt": "/matching-engine-frontend/static/js/2.af6dc0f9.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/matching-engine-frontend/static/media/logo.5d5d9eef.svg"
+    "static/css/main.62b8705c.chunk.css.map": "/matching-engine-frontend/static/css/main.62b8705c.chunk.css.map",
+    "static/js/2.04b0cc78.chunk.js.LICENSE.txt": "/matching-engine-frontend/static/js/2.04b0cc78.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a9fddad8.js",
-    "static/js/2.af6dc0f9.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.ef23bf76.chunk.js"
+    "static/js/2.04b0cc78.chunk.js",
+    "static/css/main.62b8705c.chunk.css",
+    "static/js/main.0db02bfc.chunk.js"
   ]
 }
