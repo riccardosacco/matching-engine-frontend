@@ -1,5 +1,5 @@
-import { createContext } from 'react';
+import React from "react";
 
-const context = createContext();
+const context = React.createContext(undefined);
 
 export default context;

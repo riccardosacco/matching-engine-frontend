@@ -1,12 +1,16 @@
-import {
-  GENERATE_QUERY
-} from "./app.types";
+import { SET_QUERY, SET_RESULT } from "./app.types";
 
 export default (state, action) => {
   switch (action.type) {
-    case GENERATE_QUERY:
+    case SET_QUERY:
       return {
-        ...state
+        ...state,
+        query: action.payload,
+      };
+    case SET_RESULT:
+      return {
+        ...state,
+        result: action.payload,
       };
     default:
       return state;

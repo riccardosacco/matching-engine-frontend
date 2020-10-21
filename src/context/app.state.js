@@ -4,34 +4,65 @@ import Context from "./app.context";
 import reducer from "./app.reducer";
 
 // Import libraries
-import axios from "axios"
+import axios from "axios";
 
-import settings from "../settings";
+// Import globals
+import globals from "../globals";
 
-import {
-  GENERATE_QUERY
-} from "./app.types";
+import { SET_QUERY, SET_RESULT, RESPONSE_ERROR } from "./app.types";
 
 const State = (props) => {
-  const initialState = {};
+  const initialState = {
+    query: {},
+    result: {},
+  };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // // Load User
-  const generateQuery = async () => {
-    try {
-      const res = await axios.get(settings.API_URL);
+  // changeQuery function
+  const changeQuery = async (query) => {
+    dispatch({ type: SET_QUERY, payload: query });
+  };
 
-      dispatch({ type: GENERATE_QUERY, payload: res.data });
+  // generateQuery function
+  const generateQuery = async (params) => {
+    try {
+      const response = await axios.get(`${globals.API_URL}/queryGenerator`, {
+        params,
+      });
+
+      dispatch({ type: SET_QUERY, payload: response.data });
     } catch (err) {
-      // dispatch({ type: AUTH_ERROR });
+      dispatch({ type: RESPONSE_ERROR });
     }
   };
-  return (
-    <Context.Provider>
-    </Context.Provider>
-  )
 
+  // executeQuery function
+  const executeQuery = async (query) => {
+    try {
+      const response = await axios.post(
+        `${globals.API_URL}/queryCluster`,
+        query
+      );
+
+      dispatch({ type: SET_RESULT, payload: response.data });
+    } catch (err) {
+      dispatch({ type: RESPONSE_ERROR });
+    }
+  };
+
+  return (
+    <Context.Provider
+      value={{
+        ...state,
+        generateQuery,
+        executeQuery,
+        changeQuery,
+      }}
+    >
+      {props.children}
+    </Context.Provider>
+  );
 };
 
 export default State;
