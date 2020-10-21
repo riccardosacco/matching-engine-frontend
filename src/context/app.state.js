@@ -18,15 +18,15 @@ const State = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // // Load User
-  // const generateQuery = async () => {
-  //   try {
-  //     const res = await axios.get(settings.API_URL);
+  const generateQuery = async () => {
+    try {
+      const res = await axios.get(settings.API_URL);
 
-  //     dispatch({ type: GENERATE_QUERY, payload: res.data });
-  //   } catch (err) {
-  //     // dispatch({ type: AUTH_ERROR });
-  //   }
-  // };
+      dispatch({ type: GENERATE_QUERY, payload: res.data });
+    } catch (err) {
+      // dispatch({ type: AUTH_ERROR });
+    }
+  };
   return (
     <Context.Provider>
     </Context.Provider>
