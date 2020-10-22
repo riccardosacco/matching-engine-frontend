@@ -6,11 +6,13 @@ import Context from "./context/app.context"
 // Import components
 import Header from "./components/Header"
 import TextInput from "./components/TextInput"
+import SelectInput from "./components/SelectInput"
 import TextResponse from "./components/TextResponse"
 
 import "./assets/styles.scss";
 
 const App: React.FC = () =>  {
+
   const [form, setForm] = useState({
     query_title: "",
     query_director: "",
@@ -26,18 +28,34 @@ const App: React.FC = () =>  {
   
   const context: any = useContext(Context)
 
-  const { query, result, generateQuery, executeQuery } = context;
+  const { query, result, generateQuery, executeQuery, changeQuery } = context;
+
+  const generateQueryClick = () => {
+    generateQuery(form)
+  } 
 
   const executeQueryClick = () => {
-    generateQuery(form);
-
     executeQuery(query)
   }
 
+  const changeQueryText = (e: any) => {
+    changeQuery(e.target.value)
+  }
 
-  // const changeQueryText = (e: any) => {
-  //   changeQuery(e.target.value)
-  // }
+  
+  // Content Types
+  const [contentType, setContentType] = useState("item_programme")
+
+  const contentTypes = [
+    {
+      value: "item_programme",
+      label: "Item Programme"
+    }
+  ]
+
+  const changeContentType = (e: any) => {
+    setContentType(e.target.value)
+  }
 
   return (
       <div className="app">
@@ -45,14 +63,16 @@ const App: React.FC = () =>  {
         <div className="container">
           <div className="row">
             <div className="col-sm-4">
+              <SelectInput id="content_type" label="Content Type" value={contentType} options={contentTypes} onChange={changeContentType}/>
               <TextInput id="query_title" label="Query title" value={form.query_title} onChange={inputChange}/>
               <TextInput id="query_director" label="Query director" value={form.query_director} onChange={inputChange}/>
               <TextInput id="query_year" label="Query year" value={form.query_year} onChange={inputChange}/>
-              <button className="btn btn-primary btn-block" onClick={executeQueryClick}>Run query</button>
+              <button className="btn btn-primary btn-block" onClick={generateQueryClick}>Generate query</button>
+              <button className="btn btn-danger btn-block" onClick={executeQueryClick}>Run query</button>
             </div>
             <div className="col-sm">
-              <TextResponse id="query" label="Query" value={query} rows={10} />
-              <TextResponse id="result" label="Result" value={result} rows={10} />
+              <TextResponse id="query" label="Query" value={query} rows={15} onChange={changeQueryText} />
+              <TextResponse id="result" label="Result" value={result} rows={15} onChange={() => null}/>
             </div>
           </div>
         </div>

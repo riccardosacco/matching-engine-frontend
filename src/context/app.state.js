@@ -21,7 +21,12 @@ const State = (props) => {
 
   // changeQuery function
   const changeQuery = async (query) => {
-    dispatch({ type: SET_QUERY, payload: query });
+    try {
+      dispatch({ type: SET_QUERY, payload: JSON.parse(query) });
+      
+    } catch(err){
+      console.log(`Query is NOT a valid JSON document`)
+    }
   };
 
   // generateQuery function
