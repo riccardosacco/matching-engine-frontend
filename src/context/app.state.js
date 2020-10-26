@@ -53,6 +53,7 @@ const State = (props) => {
       dispatch({ type: SET_RESULT, payload: response.data });
     } catch (err) {
       dispatch({ type: RESPONSE_ERROR });
+      console.log(err)
     }
   };
 
