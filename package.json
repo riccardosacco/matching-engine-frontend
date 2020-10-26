@@ -1,6 +1,6 @@
 {
   "name": "matching-engine-frontend",
-  "homepage": "http://riccardosacco.github.io/matching-engine-frontend",
+  "homepage": "http://matching-engine-frontend.s3-website.eu-central-1.amazonaws.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
